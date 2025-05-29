@@ -21,17 +21,16 @@ import clsx from 'clsx';
 import styles from './ArticleParamsForm.module.scss';
 
 type ArticleParamsFormProps = {
-	articleState: ArticleStateType;
 	onChange(newData: ArticleStateType): void;
 };
 
 export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
-	const { articleState, onChange } = props;
+	const { onChange } = props;
 	const [isOpen, setIsOpen] = useState(false);
 	const asideRef = useRef<HTMLDivElement>(null);
 
 	const [customizerState, setCustomizerState] = useState({
-		...articleState,
+		...defaultArticleState,
 	});
 
 	const toggleForm = () => {
